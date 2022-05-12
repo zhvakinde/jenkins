@@ -2,8 +2,9 @@ pipeline {
     agent any
     stages {
         stage('Example') {
+            tag_git = ${env.GIT_TAG_NAME}
             steps {
-                echo " tag ${env.GIT_TAG_NAME} ${env.GIT_TAG_MESSAGE}"
+                echo " tag ${tag_git} ${env.GIT_TAG_MESSAGE}"
             }
         }
     }
