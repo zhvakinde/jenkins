@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Example') {
             steps {
-                echo " tag ${env.GIT_TAG_NAME}"
+                echo " tag ${GIT_TAG_NAME}"
             }
         }
     }
