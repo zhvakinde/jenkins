@@ -1,16 +1,12 @@
 pipeline {
-    agent any
+    agent any 
     stages {
-        stage("clone"){
-            steps{
-                git branch: 'main', credentialsId: 'github', url: 'git@github.com:zhvakinde/jenkins.git'
+        stage('Stage 1') {
+            steps {
+                echo 'Hello world!' 
             }
         }
-        stage("tag"){
-            steps{
-                sh "git tag v0.1"
-            }
-        }
-        }
+    }
+}
   
   
