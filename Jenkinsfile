@@ -47,7 +47,7 @@ pipeline {
         stage('Example') {
             steps {
 
-                echo " tag ${tag_git} ${env.GIT_TAG_MESSAGE}"
+                echo " ${env.GIT_TAG_NAME} ${env.GIT_TAG_MESSAGE}"
 
             }
         }
