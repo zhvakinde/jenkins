@@ -1,4 +1,4 @@
-// Example usage
+
 node {
     git url: 'https://github.com/jenkinsci/git-tag-message-plugin'
     env.GIT_TAG_NAME = gitTagName()
@@ -39,8 +39,17 @@ boolean isTag(String desc) {
     return result
 }
 
-exm('Example') {
-      tag_git = ${env.GIT_TAG_NAME}
+pipeline {
+// Example usage
+    agent any
+
+    stages {
+        stage('Example') {
             steps {
+
                 echo " tag ${tag_git} ${env.GIT_TAG_MESSAGE}"
+
             }
+        }
+    }
+}
