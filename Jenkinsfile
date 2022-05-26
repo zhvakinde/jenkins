@@ -1,7 +1,7 @@
 node {
-  //  git url: 'https://github.com/jenkinsci/git-tag-message-plugin'
-    TAG_NAME = gitTagName()
-  sh (script: "touch TAG_NAME")
+    git url: 'https://github.com/jenkinsci/git-tag-message-plugin'
+    env.GIT_TAG_NAME = gitTagName()
+    sh (script: "touch env.GIT_TAG_NAME")
  
 }
 
