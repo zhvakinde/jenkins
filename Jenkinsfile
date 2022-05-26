@@ -1,8 +1,8 @@
 node {
   //  git url: 'https://github.com/jenkinsci/git-tag-message-plugin'
-    env.GIT_TAG_NAME = gitTagName()
+    GIT_TAG_NAME = gitTagName()
 
-  sh "echo ${env.GIT_TAG_NAME}"
+  sh "echo ${GIT_TAG_NAME}"
 }
 
 String gitTagName() {
