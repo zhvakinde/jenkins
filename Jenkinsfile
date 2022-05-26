@@ -7,7 +7,7 @@ node {
 String gitTagName() {
     commit = getCommit()
     if (commit) {
-        return sh(script: "git describe --tags ${commit}" --abbrev=0, returnStdout: true)?.trim()
+        return sh(script: "git describe --tags ${commit} --abbrev=0", returnStdout: true)?.trim()
     }
     return null
 }
