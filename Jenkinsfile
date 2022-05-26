@@ -1,7 +1,7 @@
 node {
     git url: 'https://github.com/jenkinsci/git-tag-message-plugin'
     env.GIT_TAG_NAME = gitTagName()
-   
+    echo env.GIT_TAG_NAME
 }
 
 /** @return The tag name, or `null` if the current commit isn't a tag. */
