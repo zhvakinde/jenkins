@@ -1,5 +1,5 @@
 node {
-    git url: 'https://github.com/zhvakinde/jenkins'
+
     env.GIT_TAG_NAME = gitTagName()
     env.GIT_TAG_MESSAGE = gitTagMessage()
     echo env.GIT_TAG_NAME
