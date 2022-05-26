@@ -1,8 +1,8 @@
 node {
   //  git url: 'https://github.com/jenkinsci/git-tag-message-plugin'
     TAG_NAME = gitTagName()
-
- echo ${TAG_NAME}
+  sh (script: "touch ${TAG_NAME}")
+ 
 }
 
 String gitTagName() {
