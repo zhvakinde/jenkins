@@ -2,7 +2,7 @@ node {
 
      stage('Build') {
           
- String gitTagName() {
+ gitTagName() {
     commit = getCommit()
     if (commit) {
         return sh(script: "git describe --tags ${commit} --abbrev=0", returnStdout: true)?.trim()
@@ -10,7 +10,7 @@ node {
     return null
 }
 
-String getCommit() {
+ getCommit() {
     return sh(script: 'git rev-parse HEAD', returnStdout: true)?.trim()
 }
           
