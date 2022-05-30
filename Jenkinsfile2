@@ -9,7 +9,7 @@ agent any
              git branch: 'main', url: 'https://github.com/zhvakinde/jenkins' 
              script {
              env.Commit = sh(script: 'git rev-parse HEAD', returnStdout: true)?.trim()
-             env.TAG_NAME= sh "git describe --tags ${env.Commit} --abbrev=0"
+             env.TAG_NAME= sh(script: "git describe --tags ${Commit} --abbrev=0", returnStdout: true
 }
            echo env.TAG_NAME
 }
