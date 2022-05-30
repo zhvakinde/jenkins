@@ -13,8 +13,8 @@ agent any
            echo env.TAG_NAME
 }
 }
-        stage(Deploy) {
-           step {
+        stage('Deploy') {
+           steps {
            echo env.TAG_NAME
            }
            }
