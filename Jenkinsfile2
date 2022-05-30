@@ -4,7 +4,6 @@ agent any
  stages {
 
         stage('VAR') {
-
             steps { 
              git branch: 'main', url: 'https://github.com/zhvakinde/jenkins' 
              script {
@@ -14,6 +13,10 @@ agent any
            echo env.TAG_NAME
 }
 }
+        stage(Deploy)
+           step {
+           echo env.TAG_NAME
+           }
 }
 
 }
