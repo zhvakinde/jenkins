@@ -1,5 +1,5 @@
 pipeline {
-agent {'nginx'}
+agent node (nginx)
 
  stages {
 
