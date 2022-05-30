@@ -1,6 +1,7 @@
 pipeline {
-agent node (nginx)
-
+agent {
+label 'web' 
+}
  stages {
 
         stage('VAR') {
