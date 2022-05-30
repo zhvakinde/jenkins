@@ -1,0 +1,19 @@
+pipeline {
+agent any
+
+ stages {
+
+        stage('VAR') {
+
+            steps { 
+             git branch: 'main', url: 'https://github.com/zhvakinde/jenkins'
+            script { 
+            env.Commit = 'git rev-parse HEAD'
+            env.TAG_NAME= "git describe --tags ${env.Commit} --abbrev=0"
+ }
+           echo env.TAG_NAME
+}
+}
+}
+
+}
