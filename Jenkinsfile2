@@ -6,11 +6,10 @@ agent any
         stage('VAR') {
 
             steps { 
-             git branch: 'main', url: 'https://github.com/zhvakinde/jenkins'
-            script { 
-            env.Commit =  sh 'git rev-parse HEAD'
-            env.TAG_NAME= sh "git describe --tags ${env.Commit} --abbrev=0"
- }
+             git branch: 'main', url: 'https://github.com/zhvakinde/jenkins' 
+             env.Commit = (sh 'git rev-parse HEAD')
+             env.TAG_NAME= sh "git describe --tags ${env.Commit} --abbrev=0"
+
            echo env.TAG_NAME
 }
 }
