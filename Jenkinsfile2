@@ -14,7 +14,7 @@ agent
 }
         stage('Deploy') {
            steps {
-           sh 'test@84.201.137.2'
+           sh 'test@84.201.137.2 mkdir /var/www/${env.TAG_NAME}'
            }
            }
 }
