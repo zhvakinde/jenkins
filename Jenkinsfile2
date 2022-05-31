@@ -10,7 +10,7 @@ node {
 
 }
         stage('Deploy') {
-           sh 'ssh test@84.201.137.2 mkdir -p /home/test/${env.TAG_NAME}'
+           sh "ssh test@84.201.137.2 mkdir -p /home/test/${env.TAG_NAME}"
            }
 
 
