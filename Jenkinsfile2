@@ -1,6 +1,6 @@
 node {
 
- stages {
+
 
         stage('Prepare environment') {
             steps { 
@@ -17,6 +17,6 @@ node {
            sh 'test@84.201.137.2 mkdir /var/www/${env.TAG_NAME}'
            }
            }
-}
+
 
 }
