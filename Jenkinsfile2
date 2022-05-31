@@ -9,8 +9,10 @@ node {
            echo env.TAG_NAME
 
 }
-        stage('Deploy') {
-           sh "ssh test@nginx mkdir -p /home/test/${env.TAG_NAME}"
+        stage('Deploy') 
+          sshagent (credentials: ['nginx'])
+        {
+       sh "ssh test@nginx mkdir -p /home/test/${env.TAG_NAME}"
            }
 
 
