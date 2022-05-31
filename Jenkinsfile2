@@ -1,10 +1,8 @@
 pipeline {
-agent {
-label 'web' 
-}
+agent 
  stages {
 
-        stage('VAR') {
+        stage('Prepare environment') {
             steps { 
              git branch: 'main', url: 'https://github.com/zhvakinde/jenkins' 
              script {
@@ -16,7 +14,7 @@ label 'web'
 }
         stage('Deploy') {
            steps {
-           echo env.TAG_NAME
+           sh 'test@84.201.137.2'
            }
            }
 }
