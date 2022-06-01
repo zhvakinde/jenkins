@@ -12,15 +12,11 @@ node {
         stage('Deploy') 
           sshagent (credentials: ['nginx'])
         {
-       sh 'ssh -o StrictHostKeyChecking=no test@84.252.141.168 mkdir -p /var/www/${env.TAG_NAME}'
-       sh 'scp -o StrictHostKeyChecking=no index.html test@84.252.141.168:/var/www/${env.TAG_NAME}'
-       sh 'ssh -o StrictHostKeyChecking=no test@84.252.141.168 unlink /var/www/web'
-       sh 'ssh -o StrictHostKeyChecking=no test@84.252.141.168 cd /var/www/ && ln -s  ${env.TAG_NAME} web'
-      // sh "ssh -o StrictHostKeyChecking=no test@84.252.141.168 'mkdir -p /var/www/${env.TAG_NAME}'"
-      // sh "scp -o StrictHostKeyChecking=no index.html test@84.252.141.168:/var/www/${env.TAG_NAME}"
-       // sh "ssh -o StrictHostKeyChecking=no test@84.252.141.168 'unlink /var/www/web'"
-        // sh "ssh -o StrictHostKeyChecking=no test@84.252.141.168 'www=web'" 
-        // sh "ssh -o StrictHostKeyChecking=no test@84.252.141.168 'tname=${env.TAG_NAME}'"
-       // sh "ssh -o StrictHostKeyChecking=no test@84.252.141.168 'cd /var/www/ && ln -s $tname $www'"
+
+       sh "ssh -o StrictHostKeyChecking=no test@84.252.141.168 'mkdir -p /var/www/${env.TAG_NAME}'"
+       sh "scp -o StrictHostKeyChecking=no index.html test@84.252.141.168:/var/www/${env.TAG_NAME}"
+       sh "ssh -o StrictHostKeyChecking=no test@84.252.141.168 'unlink /var/www/web'"
+
+      sh '"ssh -o StrictHostKeyChecking=no test@84.252.141.168 cd /var/www/ && ln -s ${env.TAG_NAME} web"'
    }
 }
