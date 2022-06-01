@@ -16,6 +16,6 @@ node {
        sh "scp -o StrictHostKeyChecking=no index.html test@84.252.141.168:/var/www/${env.TAG_NAME}"
        sh "ssh -o StrictHostKeyChecking=no test@84.252.141.168 'unlink /var/www/web'"
        sh "ssh -o StrictHostKeyChecking=no test@84.252.141.168 'tag_name=${env.TAG_NAME}'"
-       sh "ssh -o StrictHostKeyChecking=no test@84.252.141.168 ln -s /var/www/$tag_name /var/www/web"
+       sh "ssh -o StrictHostKeyChecking=no test@84.252.141.168 ln -s /var/www/$tag_name/var/www/web"
    }
 }
