@@ -14,7 +14,7 @@ node {
         {
        sh "ssh -o StrictHostKeyChecking=no test@84.201.137.2 'mkdir -p /var/www/${env.TAG_NAME}'"
        sh "scp -o StrictHostKeyChecking=no index.html test@84.201.137.2:/var/www/${env.TAG_NAME}"
-       sh "ssh -o StrictHostKeyChecking=no test@84.201.137.2 'rm /var/www/web && ln -s /var/www/${env.TAG_NAME} web'"
+       sh "ssh -o StrictHostKeyChecking=no test@84.201.137.2 'cd /var/www/ && rm web && ln -s ${env.TAG_NAME} web'"
        
    }
 }
