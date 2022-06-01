@@ -13,7 +13,7 @@ node {
           sshagent (credentials: ['nginx'])
         {
        sh "ssh -o StrictHostKeyChecking=no test@84.201.137.2 'mkdir -p /var/www/${env.TAG_NAME} '"
-       sh "scp index.html -o StrictHostKeyChecking=no test@84.201.137.2:/var/www/${env.TAG_NAME}/"
+       sh "scp -o StrictHostKeyChecking=no index.html test@84.201.137.2:/var/www/${env.TAG_NAME}/"
        
        
    }
